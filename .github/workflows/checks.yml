@@ -1,0 +1,19 @@
+name: Test checks
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "build ok"
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          MSG: ${{ github.event.head_commit.message }}
+        run: |
+          if [[ "$MSG" == *"[fail]"* ]]; then echo "tests failed"; exit 1; fi
+          echo "tests ok"
+  slow:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep 180
