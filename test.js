@@ -1,0 +1,3 @@
+function hello() {}
+class Cart {}
+const total = 0;
