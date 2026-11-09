@@ -5,3 +5,4 @@ function demo() {
   const a = 2;
   return a;
 }
+test
