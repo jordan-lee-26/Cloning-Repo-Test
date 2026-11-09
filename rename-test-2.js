@@ -1,2 +1,2 @@
-let x = 99;
+let x = 2;
 let y = 2;
